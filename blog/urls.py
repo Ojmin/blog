@@ -16,6 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from blog.app.user import urls
+from blog.app.user.views import Sessions, Users
+
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path(r'session', Sessions.as_view()),
+    path(r'user', Users.as_view()),
 ]
